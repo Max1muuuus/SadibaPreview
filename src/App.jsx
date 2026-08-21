@@ -68,16 +68,34 @@ const featureList = [
 const galleryImages = [
   './images/hot_tub_1.jpg',
   './images/hot_tub_2.jpg',
+  './images/hot_tub_3.jpg',
   './images/sauna_1.jpg',
+  './images/sauna_2.jpg',
+  './images/sauna_3.jpg',
+  './images/sauna_4.jpg',
   './images/nature.jpg',
   './images/gazebo_1.jpg',
   './images/forward_house.jpg',
-  './images/sauna_4.jpg',
+  './images/gazebo_2.jpg',
+  './images/another_gazebo_1.jpg',
+  './images/deluxe_room_1.jpg',
+  './images/lux_room_1.jpg',
+  './images/lux_room_2.jpg',
+  './images/standard_room_1.jpg',
+  './images/standard_room_2.jpg',
+  './images/standard_another_room_1.jpg',
+  './images/standard_another_room_2.jpg',
+  './images/corridor_between_the_rooms.jpg',
+  './images/interior_entryway.jpg',
   './images/kitchen.jpg',
   './images/fireplace-sofa-large_table.jpg',
   './images/banket_hall_1.jpg',
+  './images/banket_hall_2.jpg',
+  './images/photos_of_tourists_1.jpg',
   './images/photos_of_tourists_2.jpg',
+  './images/photos_of_tourists_3.jpg',
   './images/photos_of_tourists_4.jpg',
+  './images/main.png',
 ];
 
 const socialLinks = [
@@ -92,13 +110,38 @@ const roomCards = [
     title: 'Будинок',
     description: 'Комфортний будинок для родини або великої компанії з 5 номерами, вітальнею, кухнею та 2 ванними кімнатами.',
     details: ['5 номерів', 'Вітальня', 'Кухня', '2 ванні кімнати', 'Краєвид на гори'],
-    image: './images/forward_house.jpg',
+    images: ['./images/forward_house.jpg', './images/interior_entryway.jpg', './images/corridor_between_the_rooms.jpg'],
   },
   {
-    title: 'Двомісний номер',
-    description: 'Затишна атмосфера для двох гостей: тераса, все необхідне для спокійного відпочинку та красивий краєвид поруч.',
-    details: ['2 гості', 'Власна тераса', 'Усі зручності', 'Маленький, затишний простір', 'Панорамний вид'],
-    image: './images/deluxe_room_1.jpg',
+    title: 'Делюкс',
+    description: 'Світлий двомісний номер із власною атмосферою, зручним ліжком та усім необхідним для спокійного відпочинку.',
+    details: ['2 гості', 'Затишний інтер’єр', 'Телевізор', 'Власні зручності', 'Вид на природу'],
+    images: ['./images/deluxe_room_1.jpg'],
+  },
+  {
+    title: 'Люкс',
+    description: 'Просторий номер у дерев’яному стилі з великим ліжком, окремою зоною відпочинку та гуцульським характером.',
+    details: ['2 гості', 'Велике ліжко', 'Зона відпочинку', 'Телевізор', 'Окремі зручності'],
+    images: ['./images/lux_room_1.jpg', './images/lux_room_2.jpg'],
+  },
+  {
+    title: 'Стандартні номери',
+    description: 'Комфортні номери для тих, хто приїхав насолодитися горами, тишею та гостинністю садиби.',
+    details: ['Зручні ліжка', 'Світлі інтер’єри', 'Телевізор', 'Сімейна атмосфера', 'Доступ до спільних зон'],
+    images: ['./images/standard_room_1.jpg', './images/standard_room_2.jpg', './images/standard_another_room_1.jpg', './images/standard_another_room_2.jpg'],
+  },
+];
+
+const retreatCollections = [
+  {
+    title: 'Чан на дровах',
+    description: 'Теплий вечір під відкритим небом, вода, вогонь і краєвиди Карпат.',
+    images: ['./images/hot_tub_1.jpg', './images/hot_tub_2.jpg', './images/hot_tub_3.jpg'],
+  },
+  {
+    title: 'Сауна та кімната відпочинку',
+    description: 'Сауна з підсвіткою, басейном і простором, де можна повністю перезавантажитися.',
+    images: ['./images/sauna_1.jpg', './images/sauna_2.jpg', './images/sauna_3.jpg', './images/sauna_4.jpg'],
   },
 ];
 
@@ -296,8 +339,13 @@ function App() {
             {roomCards.map((room, index) => (
               <article key={room.title} className={`room-card card-${index + 1}`}>
                 <div className="room-media">
-                  <img src={room.image} alt={room.title} />
+                  <img src={room.images[0]} alt={room.title} />
                   <span className="room-tag">{room.title}</span>
+                  <div className="room-media-strip">
+                    {room.images.map((image) => (
+                      <img key={image} src={image} alt={`${room.title} — фото`} />
+                    ))}
+                  </div>
                 </div>
                 <div className="room-content">
                   <div className="room-label">{room.title}</div>
@@ -334,6 +382,24 @@ function App() {
             <div className="hot-tub-visual">
               <img src="./images/hot_tub_3.jpg" alt="Чан на дровах у Карпатах" />
             </div>
+          </div>
+          <div className="container retreat-collections">
+            {retreatCollections.map((collection) => (
+              <article key={collection.title} className="retreat-collection">
+                <div>
+                  <p className="eyebrow">Відпочинок</p>
+                  <h3>{collection.title}</h3>
+                  <p>{collection.description}</p>
+                </div>
+                <div className="retreat-photo-grid">
+                  {collection.images.map((image) => (
+                    <button key={image} type="button" onClick={() => setActiveImage(image)} aria-label={`Відкрити фото: ${collection.title}`}>
+                      <img src={image} alt={collection.title} />
+                    </button>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
