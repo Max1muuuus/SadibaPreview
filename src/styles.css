@@ -566,23 +566,48 @@ button {
   transition: transform 0.45s ease;
 }
 
-.room-media-strip {
+.room-arrow {
   position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  display: flex;
-  gap: 8px;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  background: rgba(10, 19, 17, 0.62);
+  color: var(--white);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 2;
 }
 
-.room-media-strip img {
-  width: 62px;
-  height: 48px;
-  min-height: 0;
-  border: 2px solid rgba(255, 255, 255, 0.72);
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+.room-arrow:hover {
+  background: rgba(10, 19, 17, 0.88);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.room-arrow-left {
+  left: 18px;
+}
+
+.room-arrow-right {
+  right: 18px;
+}
+
+.room-counter {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(10, 19, 17, 0.62);
+  color: var(--white);
+  font-size: 0.76rem;
+  font-weight: 700;
+  z-index: 2;
 }
 
 .room-card:hover .room-media img {

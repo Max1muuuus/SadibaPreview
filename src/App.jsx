@@ -41,6 +41,7 @@ import {
   Sun,
   MessageCircle,
   Quote,
+  ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
@@ -66,36 +67,10 @@ const featureList = [
 ];
 
 const galleryImages = [
-  './images/hot_tub_1.jpg',
-  './images/hot_tub_2.jpg',
-  './images/hot_tub_3.jpg',
-  './images/sauna_1.jpg',
-  './images/sauna_2.jpg',
-  './images/sauna_3.jpg',
-  './images/sauna_4.jpg',
-  './images/nature.jpg',
-  './images/gazebo_1.jpg',
-  './images/forward_house.jpg',
-  './images/gazebo_2.jpg',
-  './images/another_gazebo_1.jpg',
-  './images/deluxe_room_1.jpg',
-  './images/lux_room_1.jpg',
-  './images/lux_room_2.jpg',
-  './images/standard_room_1.jpg',
-  './images/standard_room_2.jpg',
-  './images/standard_another_room_1.jpg',
-  './images/standard_another_room_2.jpg',
-  './images/corridor_between_the_rooms.jpg',
-  './images/interior_entryway.jpg',
-  './images/kitchen.jpg',
-  './images/fireplace-sofa-large_table.jpg',
-  './images/banket_hall_1.jpg',
-  './images/banket_hall_2.jpg',
   './images/photos_of_tourists_1.jpg',
   './images/photos_of_tourists_2.jpg',
   './images/photos_of_tourists_3.jpg',
   './images/photos_of_tourists_4.jpg',
-  './images/main.png',
 ];
 
 const socialLinks = [
@@ -156,6 +131,15 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeImage, setActiveImage] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const [roomImageIndexes, setRoomImageIndexes] = useState({});
+
+  const changeRoomImage = (roomTitle, imageCount, direction) => {
+    setRoomImageIndexes((current) => {
+      const currentIndex = current[roomTitle] || 0;
+      const nextIndex = (currentIndex + direction + imageCount) % imageCount;
+      return { ...current, [roomTitle]: nextIndex };
+    });
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -165,13 +149,10 @@ function App() {
 
   const galleryLayout = useMemo(
     () => [
-      { className: 'large', image: './images/hot_tub_2.jpg' },
-      { className: 'medium', image: './images/sauna_3.jpg' },
-      { className: 'small', image: './images/gazebo_2.jpg' },
-      { className: 'medium', image: './images/sauna_1.jpg' },
-      { className: 'large', image: './images/photos_of_tourists_1.jpg' },
-      { className: 'small', image: './images/kitchen.jpg' },
-      { className: 'medium', image: './images/banket_hall_2.jpg' },
+      { className: 'large', image: './images/gazebo_1.jpg' },
+      { className: 'medium', image: './images/gazebo_2.jpg' },
+      { className: 'small', image: './images/another_gazebo_1.jpg' },
+      { className: 'medium', image: './images/nature.jpg' },
     ],
     [],
   );
@@ -339,13 +320,31 @@ function App() {
             {roomCards.map((room, index) => (
               <article key={room.title} className={`room-card card-${index + 1}`}>
                 <div className="room-media">
-                  <img src={room.images[0]} alt={room.title} />
+                  <img src={room.images[roomImageIndexes[room.title] || 0]} alt={room.title} />
                   <span className="room-tag">{room.title}</span>
-                  <div className="room-media-strip">
-                    {room.images.map((image) => (
-                      <img key={image} src={image} alt={`${room.title} — фото`} />
-                    ))}
-                  </div>
+                  {room.images.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        className="room-arrow room-arrow-left"
+                        onClick={() => changeRoomImage(room.title, room.images.length, -1)}
+                        aria-label={`Попереднє фото: ${room.title}`}
+                      >
+                        <ChevronLeft size={22} />
+                      </button>
+                      <button
+                        type="button"
+                        className="room-arrow room-arrow-right"
+                        onClick={() => changeRoomImage(room.title, room.images.length, 1)}
+                        aria-label={`Наступне фото: ${room.title}`}
+                      >
+                        <ChevronRight size={22} />
+                      </button>
+                      <div className="room-counter">
+                        {(roomImageIndexes[room.title] || 0) + 1} / {room.images.length}
+                      </div>
+                    </>
+                  )}
                 </div>
                 <div className="room-content">
                   <div className="room-label">{room.title}</div>
@@ -428,7 +427,7 @@ function App() {
         <section className="event-space section reveal">
           <div className="container event-inner">
             <div className="event-image">
-              <img src="./images/banket_hall_1.jpg" alt="Відпочинковий зал для компаній" />
+              <img src="./images/banket_hall_2.jpg" alt="Просторий відпочинковий зал для компаній" />
             </div>
             <div className="event-copy">
               <p className="eyebrow">Для великих компаній та святкувань</p>
