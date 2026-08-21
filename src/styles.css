@@ -234,7 +234,7 @@ button {
   display: flex;
   align-items: end;
   padding-top: 80px;
-  background: linear-gradient(rgba(9, 17, 15, 0.38), rgba(9, 17, 15, 0.38)), url('/images/main.png') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(9, 17, 15, 0.38), rgba(9, 17, 15, 0.38)), url('../images/main.png') center/cover no-repeat fixed;
   position: relative;
 }
 
@@ -873,7 +873,7 @@ button {
 
 .atmosphere-visual {
   min-height: 520px;
-  background: linear-gradient(rgba(6, 12, 11, 0.36), rgba(6, 12, 11, 0.46)), url('/images/nature.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(6, 12, 11, 0.36), rgba(6, 12, 11, 0.46)), url('../images/nature.jpg') center/cover no-repeat;
   display: flex;
   align-items: end;
   padding-bottom: 42px;

@@ -66,18 +66,18 @@ const featureList = [
 ];
 
 const galleryImages = [
-  'images/hot_tub_1.jpg',
-  'images/hot_tub_2.jpg',
-  'images/sauna_1.jpg',
-  'images/nature.jpg',
-  'images/gazebo_1.jpg',
-  'images/forward_house.jpg',
-  'images/sauna_4.jpg',
-  'images/kitchen.jpg',
-  'images/fireplace-sofa-large_table.jpg',
-  'images/banket_hall_1.jpg',
-  'images/photos_of_tourists_2.jpg',
-  'images/photos_of_tourists_4.jpg',
+  './images/hot_tub_1.jpg',
+  './images/hot_tub_2.jpg',
+  './images/sauna_1.jpg',
+  './images/nature.jpg',
+  './images/gazebo_1.jpg',
+  './images/forward_house.jpg',
+  './images/sauna_4.jpg',
+  './images/kitchen.jpg',
+  './images/fireplace-sofa-large_table.jpg',
+  './images/banket_hall_1.jpg',
+  './images/photos_of_tourists_2.jpg',
+  './images/photos_of_tourists_4.jpg',
 ];
 
 const socialLinks = [
@@ -92,13 +92,13 @@ const roomCards = [
     title: 'Будинок',
     description: 'Комфортний будинок для родини або великої компанії з 5 номерами, вітальнею, кухнею та 2 ванними кімнатами.',
     details: ['5 номерів', 'Вітальня', 'Кухня', '2 ванні кімнати', 'Краєвид на гори'],
-    image: 'images/forward_house.jpg',
+    image: './images/forward_house.jpg',
   },
   {
     title: 'Двомісний номер',
     description: 'Затишна атмосфера для двох гостей: тераса, все необхідне для спокійного відпочинку та красивий краєвид поруч.',
     details: ['2 гості', 'Власна тераса', 'Усі зручності', 'Маленький, затишний простір', 'Панорамний вид'],
-    image: 'images/deluxe_room_1.jpg',
+    image: './images/deluxe_room_1.jpg',
   },
 ];
 
@@ -122,13 +122,13 @@ function App() {
 
   const galleryLayout = useMemo(
     () => [
-      { className: 'large', image: 'images/hot_tub_2.jpg' },
-      { className: 'medium', image: 'images/sauna_3.jpg' },
-      { className: 'small', image: 'images/gazebo_2.jpg' },
-      { className: 'medium', image: 'images/sauna_1.jpg' },
-      { className: 'large', image: 'images/photos_of_tourists_1.jpg' },
-      { className: 'small', image: 'images/kitchen.jpg' },
-      { className: 'medium', image: 'images/banket_hall_2.jpg' },
+      { className: 'large', image: './images/hot_tub_2.jpg' },
+      { className: 'medium', image: './images/sauna_3.jpg' },
+      { className: 'small', image: './images/gazebo_2.jpg' },
+      { className: 'medium', image: './images/sauna_1.jpg' },
+      { className: 'large', image: './images/photos_of_tourists_1.jpg' },
+      { className: 'small', image: './images/kitchen.jpg' },
+      { className: 'medium', image: './images/banket_hall_2.jpg' },
     ],
     [],
   );
@@ -332,7 +332,7 @@ function App() {
               </div>
             </div>
             <div className="hot-tub-visual">
-              <img src="images/hot_tub_3.jpg" alt="Чан на дровах у Карпатах" />
+              <img src="./images/hot_tub_3.jpg" alt="Чан на дровах у Карпатах" />
             </div>
           </div>
         </section>
@@ -362,7 +362,7 @@ function App() {
         <section className="event-space section reveal">
           <div className="container event-inner">
             <div className="event-image">
-              <img src="images/banket_hall_1.jpg" alt="Відпочинковий зал для компаній" />
+              <img src="./images/banket_hall_1.jpg" alt="Відпочинковий зал для компаній" />
             </div>
             <div className="event-copy">
               <p className="eyebrow">Для великих компаній та святкувань</p>
