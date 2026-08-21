@@ -66,18 +66,18 @@ const featureList = [
 ];
 
 const galleryImages = [
-  '.images/hot_tub_1.jpg',
-  '.images/hot_tub_2.jpg',
-  '.images/sauna_1.jpg',
-  '.images/nature.jpg',
-  '.images/gazebo_1.jpg',
-  '.images/forward_house.jpg',
-  '.images/sauna_4.jpg',
-  '.images/kitchen.jpg',
-  '.images/fireplace-sofa-large_table.jpg',
-  '.images/banket_hall_1.jpg',
-  '.images/photos_of_tourists_2.jpg',
-  '.images/photos_of_tourists_4.jpg',
+  'images/hot_tub_1.jpg',
+  'images/hot_tub_2.jpg',
+  'images/sauna_1.jpg',
+  'images/nature.jpg',
+  'images/gazebo_1.jpg',
+  'images/forward_house.jpg',
+  'images/sauna_4.jpg',
+  'images/kitchen.jpg',
+  'images/fireplace-sofa-large_table.jpg',
+  'images/banket_hall_1.jpg',
+  'images/photos_of_tourists_2.jpg',
+  'images/photos_of_tourists_4.jpg',
 ];
 
 const socialLinks = [
