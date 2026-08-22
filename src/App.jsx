@@ -183,7 +183,7 @@ const eventImages = [
 ];
 
 const stats = [
-  { value: '8', label: 'номерів у будинку' },
+  { value: '8', label: 'номерів' },
   { value: '2', label: 'альтанки для відпочинку' },
   { value: '1', label: 'чан на дровах' },
   { value: '∞', label: 'вражень від природи' },
@@ -339,7 +339,7 @@ function App() {
 
           <div className="story-stats">
             {[
-              { value: '8', label: 'номерів у будинку' },
+              { value: '8', label: 'номерів' },
               { value: '2', label: 'альтанки для спокійних вечорів' },
               { value: '∞', label: 'вражень від гір і тиші' },
             ].map((stat) => (
@@ -593,7 +593,11 @@ function App() {
               <li><a href="tel:+380979893151">+380 97 9893 151</a></li>
               <li><a href="tel:+380985135466">+380 98 5135 466</a></li>
               <li><a href="mailto:sadibaukurila@gmail.com">sadibaukurila@gmail.com</a></li>
-              <li>село Брустури, Косівський район, Івано-Франківська область</li>
+              <li>
+                <a href="https://maps.app.goo.gl/vVvFUuJumJGuoyHn7" target="_blank" rel="noreferrer">
+                  село Брустури, Косівський район, Івано-Франківська область
+                </a>
+              </li>
             </ul>
           </div>
 
