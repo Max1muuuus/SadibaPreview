@@ -103,7 +103,6 @@ const roomCards = [
       './images/room_in_house_3.jpg',
       './images/room_in_house_4.jpg',
       './images/room_in_house_5.jpg',
-      './images/terrace.jpg',
     ],
   },
   {
