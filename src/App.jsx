@@ -183,7 +183,7 @@ const eventImages = [
 ];
 
 const stats = [
-  { value: '5', label: 'номерів у будинку' },
+  { value: '8', label: 'номерів у будинку' },
   { value: '2', label: 'альтанки для відпочинку' },
   { value: '1', label: 'чан на дровах' },
   { value: '∞', label: 'вражень від природи' },
@@ -224,6 +224,7 @@ function App() {
       { className: 'medium', image: './images/territory_3.jpg' },
       { className: 'small', image: './images/territory_4.jpg' },
       { className: 'small', image: './images/trampoline.jpg' },
+      { className: 'medium', image: './images/terrace.jpg' },
     ],
     [],
   );
@@ -338,7 +339,7 @@ function App() {
 
           <div className="story-stats">
             {[
-              { value: '5', label: 'номерів у будинку' },
+              { value: '8', label: 'номерів у будинку' },
               { value: '2', label: 'альтанки для спокійних вечорів' },
               { value: '∞', label: 'вражень від гір і тиші' },
             ].map((stat) => (
@@ -591,7 +592,6 @@ function App() {
             <ul>
               <li><a href="tel:+380979893151">+380 97 9893 151</a></li>
               <li><a href="tel:+380985135466">+380 98 5135 466</a></li>
-              <li><a href="tel:+380668488057">+380 66 8488 057</a></li>
               <li><a href="mailto:sadibaukurila@gmail.com">sadibaukurila@gmail.com</a></li>
               <li>село Брустури, Косівський район, Івано-Франківська область</li>
             </ul>
