@@ -59,6 +59,8 @@ const featureList = [
   { icon: Mountain, label: 'Краєвид на Карпати' },
   { icon: Flame, label: 'Чан на дровах' },
   { icon: Bath, label: 'Сауна' },
+  { icon: Car, label: 'Катання на квадроциклі' },
+  { icon: Compass, label: 'Уроки їзди на квадроциклі' },
   { icon: Wifi, label: 'Безкоштовний Wi-Fi' },
   { icon: ParkingCircle, label: 'Приватне паркування' },
   { icon: TreesIcon, label: 'Велика територія' },
@@ -71,6 +73,7 @@ const galleryImages = [
   './images/photos_of_tourists_2.jpg',
   './images/photos_of_tourists_3.jpg',
   './images/photos_of_tourists_4.jpg',
+  './images/photos_of_tourists_5.jpg',
 ];
 
 const socialLinks = [
@@ -83,27 +86,61 @@ const socialLinks = [
 const roomCards = [
   {
     title: 'Будинок',
-    description: 'Комфортний будинок для родини або великої компанії з 5 номерами, вітальнею, кухнею та 2 ванними кімнатами.',
-    details: ['5 номерів', 'Вітальня', 'Кухня', '2 ванні кімнати', 'Краєвид на гори'],
-    images: ['./images/forward_house.jpg', './images/interior_entryway.jpg', './images/corridor_between_the_rooms.jpg'],
+    description: 'Просторий будинок для родини або великої компанії: усі 5 кімнат, вітальня, кухня, ванні кімнати, коридори та вхідна зона.',
+    details: ['8 номерів', 'Вітальня', 'Кухня', '2 ванні кімнати', 'Увесь будинок у вашому розпорядженні'],
+    images: [
+      './images/forward_house.jpg',
+      './images/enterance.jpg',
+      './images/hall_house.jpg',
+      './images/kitchen_in_house.jpg',
+      './images/bathroom_house_1.jpg',
+      './images/bathroom_house_2.jpg',
+      './images/corridor.jpg',
+      './images/corridor_on_second_floor_1.jpg',
+      './images/corridor_on_second_floor_2.jpg',
+      './images/room_in_house_1.jpg',
+      './images/room_in_house_2.jpg',
+      './images/room_in_house_3.jpg',
+      './images/room_in_house_4.jpg',
+      './images/room_in_house_5.jpg',
+      './images/terrace.jpg',
+    ],
   },
   {
     title: 'Делюкс',
     description: 'Світлий двомісний номер із власною атмосферою, зручним ліжком та усім необхідним для спокійного відпочинку.',
     details: ['2 гості', 'Затишний інтер’єр', 'Телевізор', 'Власні зручності', 'Вид на природу'],
-    images: ['./images/deluxe_room_1.jpg'],
+    images: [
+      './images/deluxe_room_1.jpg',
+      './images/deluxe_room_2.jpg',
+      './images/deluxe_room_3.jpg',
+      './images/deluxe_room_4.jpg',
+      './images/deluxe_room_5.jpg',
+    ],
   },
   {
-    title: 'Люкс',
+    title: 'Люкс 1',
     description: 'Просторий номер у дерев’яному стилі з великим ліжком, окремою зоною відпочинку та гуцульським характером.',
     details: ['2 гості', 'Велике ліжко', 'Зона відпочинку', 'Телевізор', 'Окремі зручності'],
-    images: ['./images/lux_room_1.jpg', './images/lux_room_2.jpg'],
+    images: [
+      './images/luxe_room_1_1.jpg',
+      './images/luxe_room_1_2.jpg',
+      './images/luxe_room_1_3.jpg',
+      './images/luxe_room_1_4.jpg',
+      './images/luxe_room_1_5.jpg',
+    ],
   },
   {
-    title: 'Стандартні номери',
-    description: 'Комфортні номери для тих, хто приїхав насолодитися горами, тишею та гостинністю садиби.',
-    details: ['Зручні ліжка', 'Світлі інтер’єри', 'Телевізор', 'Сімейна атмосфера', 'Доступ до спільних зон'],
-    images: ['./images/standard_room_1.jpg', './images/standard_room_2.jpg', './images/standard_another_room_1.jpg', './images/standard_another_room_2.jpg'],
+    title: 'Люкс 2',
+    description: 'Окремий люкс для тих, хто цінує більше простору, тепло натурального дерева та комфортний карпатський відпочинок.',
+    details: ['2 гості', 'Велике ліжко', 'Окрема зона відпочинку', 'Телевізор', 'Окремі зручності'],
+    images: [
+      './images/luxe_room_2_1.jpg',
+      './images/luxe_room_2_2.jpg',
+      './images/luxe_room_2_3.jpg',
+      './images/luxe_room_2_4.jpg',
+      './images/luxe_room_2_5.jpg',
+    ],
   },
 ];
 
@@ -111,13 +148,39 @@ const retreatCollections = [
   {
     title: 'Чан на дровах',
     description: 'Теплий вечір під відкритим небом, вода, вогонь і краєвиди Карпат.',
-    images: ['./images/hot_tub_1.jpg', './images/hot_tub_2.jpg', './images/hot_tub_3.jpg'],
+    images: [
+      './images/hot_tub_1.jpg',
+      './images/hot_tub_2.jpg',
+      './images/hot_tub_3.jpg',
+      './images/hot_tub_4.jpg',
+      './images/hot_tub_5.jpg',
+      './images/hot_tub_6.jpg',
+      './images/hot_tub_7.jpg',
+    ],
   },
   {
     title: 'Сауна та кімната відпочинку',
     description: 'Сауна з підсвіткою, басейном і простором, де можна повністю перезавантажитися.',
-    images: ['./images/sauna_1.jpg', './images/sauna_2.jpg', './images/sauna_3.jpg', './images/sauna_4.jpg'],
+    images: [
+      './images/sauna_1.jpg',
+      './images/sauna_2.jpg',
+      './images/sauna_3.jpg',
+      './images/sauna_4.jpg',
+      './images/sauna_5.jpg',
+      './images/sauna_6.jpg',
+      './images/sauna_7.jpg',
+      './images/sauna_8.jpg',
+      './images/sauna_9.jpg',
+      './images/sauna_10.jpg',
+      './images/bathroom_in_sauna.jpg',
+    ],
   },
+];
+
+const eventImages = [
+  './images/banket_hall_1.jpg',
+  './images/banket_hall_2.jpg',
+  './images/banket_hall_3.jpg',
 ];
 
 const stats = [
@@ -149,10 +212,19 @@ function App() {
 
   const galleryLayout = useMemo(
     () => [
-      { className: 'large', image: './images/gazebo_1.jpg' },
-      { className: 'medium', image: './images/gazebo_2.jpg' },
-      { className: 'small', image: './images/another_gazebo_1.jpg' },
-      { className: 'medium', image: './images/nature.jpg' },
+      { className: 'large', image: './images/gazebo_near_house_1.jpg' },
+      { className: 'medium', image: './images/gazebo_near_house_2.jpg' },
+      { className: 'small', image: './images/gazebo_near_house_3.jpg' },
+      { className: 'medium', image: './images/gazebo_under_river.jpg' },
+      { className: 'large', image: './images/swing.jpg' },
+      { className: 'small', image: './images/nature_1.jpg' },
+      { className: 'medium', image: './images/nature_2.jpg' },
+      { className: 'small', image: './images/nature_3.jpg' },
+      { className: 'medium', image: './images/territory_1.jpg' },
+      { className: 'small', image: './images/territory_2.jpg' },
+      { className: 'medium', image: './images/territory_3.jpg' },
+      { className: 'small', image: './images/territory_4.jpg' },
+      { className: 'small', image: './images/trampoline.jpg' },
     ],
     [],
   );
@@ -255,7 +327,7 @@ function App() {
                 «Садиба у Курила» з сауною та чаном на дровах – це відпочинковий комплекс у мальовничих Карпатах в Івано-Франківській області.
               </p>
               <p>
-                З вікон відкривається неймовірний краєвид на гори. У самому серці Гуцульщини ви можете відпочити з компанією друзів чи сім'єю у будинку з 5 номерами, вітальнею, кухнею та 2 ванними кімнатами.
+                З вікон відкривається неймовірний краєвид на гори. У самому серці Гуцульщини ви можете відпочити з компанією друзів чи сім'єю у будинку з 8 номерами, вітальнею, кухнею та 2 ванними кімнатами.
               </p>
             </div>
             <div className="about-text-block accent">
@@ -267,7 +339,7 @@ function App() {
 
           <div className="story-stats">
             {[
-              { value: '5', label: 'комфортабельних номерів' },
+              { value: '8', label: 'номерів у будинку' },
               { value: '2', label: 'альтанки для спокійних вечорів' },
               { value: '∞', label: 'вражень від гір і тиші' },
             ].map((stat) => (
@@ -312,7 +384,7 @@ function App() {
 
         <section id="rooms" className="rooms section container reveal">
           <div className="section-heading align-left">
-            <p className="eyebrow">Номери та проживання</p>
+            <p className="eyebrow">Номери</p>
             <h2>Комфорт, природа та простір для всієї компанії.</h2>
           </div>
 
@@ -320,7 +392,11 @@ function App() {
             {roomCards.map((room, index) => (
               <article key={room.title} className={`room-card card-${index + 1}`}>
                 <div className="room-media">
-                  <img src={room.images[roomImageIndexes[room.title] || 0]} alt={room.title} />
+                  <img
+                    key={`${room.title}-${roomImageIndexes[room.title] || 0}`}
+                    src={room.images[roomImageIndexes[room.title] || 0]}
+                    alt={room.title}
+                  />
                   <span className="room-tag">{room.title}</span>
                   {room.images.length > 1 && (
                     <>
@@ -428,6 +504,13 @@ function App() {
           <div className="container event-inner">
             <div className="event-image">
               <img src="./images/banket_hall_2.jpg" alt="Просторий відпочинковий зал для компаній" />
+              <div className="event-photo-strip">
+                {eventImages.map((image) => (
+                  <button key={image} type="button" onClick={() => setActiveImage(image)} aria-label="Відкрити фото залу">
+                    <img src={image} alt="Фото відпочинкового залу" />
+                  </button>
+                ))}
+              </div>
             </div>
             <div className="event-copy">
               <p className="eyebrow">Для великих компаній та святкувань</p>
