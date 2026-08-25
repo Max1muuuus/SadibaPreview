@@ -568,13 +568,34 @@ button {
 
 .room-media > .room-image-frame-a,
 .room-media > .room-image-frame-b {
-  animation: roomImageIn 0.42s ease both;
+  animation-duration: 0.42s;
+  animation-timing-function: cubic-bezier(0.22, 0.7, 0.25, 1);
+  animation-fill-mode: both;
 }
 
-@keyframes roomImageIn {
+.room-media > .room-slide-next {
+  animation-name: roomImageSlideFromRight;
+}
+
+.room-media > .room-slide-previous {
+  animation-name: roomImageSlideFromLeft;
+}
+
+@keyframes roomImageSlideFromRight {
   from {
-    opacity: 0.35;
-    transform: scale(1.035) translateX(12px);
+    opacity: 0.55;
+    transform: scale(1.02) translateX(72px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes roomImageSlideFromLeft {
+  from {
+    opacity: 0.55;
+    transform: scale(1.02) translateX(-72px);
   }
   to {
     opacity: 1;
