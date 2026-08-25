@@ -566,7 +566,8 @@ button {
   transition: transform 0.45s ease;
 }
 
-.room-media > img {
+.room-media > .room-image-frame-a,
+.room-media > .room-image-frame-b {
   animation: roomImageIn 0.42s ease both;
 }
 

@@ -221,6 +221,7 @@ function App() {
   const [activeImage, setActiveImage] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const [roomImageIndexes, setRoomImageIndexes] = useState({});
+  const [roomAnimationTokens, setRoomAnimationTokens] = useState({});
 
   const changeRoomImage = (roomTitle, imageCount, direction) => {
     const room = roomCards.find((item) => item.title === roomTitle);
@@ -232,6 +233,7 @@ function App() {
       if (resolved) return;
       resolved = true;
       setRoomImageIndexes((current) => ({ ...current, [roomTitle]: nextIndex }));
+      setRoomAnimationTokens((current) => ({ ...current, [roomTitle]: (current[roomTitle] || 0) + 1 }));
     };
 
     nextImage.onload = () => {
@@ -442,6 +444,7 @@ function App() {
               <article key={room.title} className={`room-card card-${index + 1}`}>
                 <div className="room-media">
                   <img
+                    className={`room-image-frame-${(roomAnimationTokens[room.title] || 0) % 2 === 0 ? 'a' : 'b'}`}
                     src={room.images[roomImageIndexes[room.title] || 0]}
                     alt={room.title}
                   />
