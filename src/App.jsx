@@ -223,11 +223,26 @@ function App() {
   const [roomImageIndexes, setRoomImageIndexes] = useState({});
 
   const changeRoomImage = (roomTitle, imageCount, direction) => {
-    setRoomImageIndexes((current) => {
-      const currentIndex = current[roomTitle] || 0;
-      const nextIndex = (currentIndex + direction + imageCount) % imageCount;
-      return { ...current, [roomTitle]: nextIndex };
-    });
+    const room = roomCards.find((item) => item.title === roomTitle);
+    const currentIndex = roomImageIndexes[roomTitle] || 0;
+    const nextIndex = (currentIndex + direction + imageCount) % imageCount;
+    const nextImage = new Image();
+    let resolved = false;
+    const showNextImage = () => {
+      if (resolved) return;
+      resolved = true;
+      setRoomImageIndexes((current) => ({ ...current, [roomTitle]: nextIndex }));
+    };
+
+    nextImage.onload = () => {
+      if (nextImage.decode) {
+        nextImage.decode().then(showNextImage).catch(showNextImage);
+      } else {
+        showNextImage();
+      }
+    };
+    nextImage.src = room.images[nextIndex];
+    if (nextImage.complete && nextImage.naturalWidth > 0) showNextImage();
   };
 
   useEffect(() => {
@@ -427,7 +442,6 @@ function App() {
               <article key={room.title} className={`room-card card-${index + 1}`}>
                 <div className="room-media">
                   <img
-                    key={`${room.title}-${roomImageIndexes[room.title] || 0}`}
                     src={room.images[roomImageIndexes[room.title] || 0]}
                     alt={room.title}
                   />
