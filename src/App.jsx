@@ -186,6 +186,29 @@ const eventImages = [
   './images/banket_hall_3.jpg',
 ];
 
+const preloadImages = [
+  './images/main.jpg',
+  './images/nature_1.jpg',
+  './images/nature_2.jpg',
+  './images/nature_3.jpg',
+  './images/gazebo_near_house_1.jpg',
+  './images/gazebo_near_house_2.jpg',
+  './images/gazebo_near_house_3.jpg',
+  './images/gazebo_under_river.jpg',
+  './images/swing.jpg',
+  './images/territory_1.jpg',
+  './images/territory_2.jpg',
+  './images/territory_3.jpg',
+  './images/territory_4.jpg',
+  './images/trampoline.jpg',
+  './images/terrace.jpg',
+  './images/genertal_chan_sauna.jpg',
+  ...galleryImages,
+  ...roomCards.flatMap((room) => room.images),
+  ...retreatCollections.flatMap((collection) => collection.images),
+  ...eventImages,
+];
+
 const stats = [
   { value: '8', label: 'номерів' },
   { value: '2', label: 'альтанки для відпочинку' },
@@ -211,6 +234,13 @@ function App() {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    preloadImages.forEach((src) => {
+      const image = new Image();
+      image.src = src;
+    });
   }, []);
 
   const galleryLayout = useMemo(
